@@ -60,7 +60,7 @@
     
     
 //    通过经度和纬度查找地点
-    /*
+   
     CLGeocoder *geocoder=[[CLGeocoder alloc] init];
     CLLocationCoordinate2D coordinateToBeFound = CLLocationCoordinate2DMake(32.462856, 119.940759);
     CLLocation *location = [[CLLocation alloc] initWithLatitude:32.462856 longitude:119.940759];
@@ -87,51 +87,51 @@
             }
         }
     }];
-    */
+    
     // 本地商户查询
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(32.462856, 119.940759);
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.005, 0.005);
-    
-    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-    request.naturalLanguageQuery = @"银行";
-    request.region = MKCoordinateRegionMake(coordinate, span);
-    
-    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        if (error)
-        {
-            NSLog(@"Error: %@", [error localizedDescription]);
-        }
-        else
-        {
-            for (MKMapItem *item in response.mapItems)
-            {
-                CLPlacemark *placemark = item.placemark;
-                CLLocationCoordinate2D coordinateP = placemark.location.coordinate;
-                NSLog(@"%.4f, %.4f", coordinateP.latitude, coordinateP.longitude);
-                
-                CLLocationDegrees lat = coordinateP.latitude - coordinate.latitude;
-                CLLocationDegrees lon = coordinateP.longitude - coordinate.longitude;
-                if (fabs(lat) <= 0.01 && fabs(lon) <= 0.01)
-                {
-                    // 创建标注
-                    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                    annotation.coordinate = coordinateP;
-                    annotation.title = item.name;
-                    annotation.subtitle = [placemark.addressDictionary objectForKey:@"Street"];
-                    [self.mapView addAnnotation:annotation];
-                    
-                }
-                
-                // 3秒后跳转到行车路线
-                [self performSelector:@selector(showRoute:) withObject:[NSValue valueWithMKCoordinate:coordinateP] afterDelay:3.0];
-                
-            }
-            // 指定显示区域
-            [self.mapView setRegion:MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:NO];
-        }
-    }];
+//    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(32.462856, 119.940759);
+//    MKCoordinateSpan span = MKCoordinateSpanMake(0.005, 0.005);
+//    
+//    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+//    request.naturalLanguageQuery = @"银行";
+//    request.region = MKCoordinateRegionMake(coordinate, span);
+//    
+//    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+//    
+//    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+//        if (error)
+//        {
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//        else
+//        {
+//            for (MKMapItem *item in response.mapItems)
+//            {
+//                CLPlacemark *placemark = item.placemark;
+//                CLLocationCoordinate2D coordinateP = placemark.location.coordinate;
+//                NSLog(@"%.4f, %.4f", coordinateP.latitude, coordinateP.longitude);
+//                
+//                CLLocationDegrees lat = coordinateP.latitude - coordinate.latitude;
+//                CLLocationDegrees lon = coordinateP.longitude - coordinate.longitude;
+//                if (fabs(lat) <= 0.01 && fabs(lon) <= 0.01)
+//                {
+//                    // 创建标注
+//                    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+//                    annotation.coordinate = coordinateP;
+//                    annotation.title = item.name;
+//                    annotation.subtitle = [placemark.addressDictionary objectForKey:@"Street"];
+//                    [self.mapView addAnnotation:annotation];
+//                    
+//                }
+//                
+//                // 3秒后跳转到行车路线
+//                [self performSelector:@selector(showRoute:) withObject:[NSValue valueWithMKCoordinate:coordinateP] afterDelay:3.0];
+//                
+//            }
+//            // 指定显示区域
+//            [self.mapView setRegion:MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:NO];
+//        }
+//    }];
     
     
 }

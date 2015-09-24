@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4AABE369-5AA7-4389-836B-434D255C1341</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyMapTest4</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>72AFA96E6C2D96C70562A87B81B08904E96BD08D</key>
+		<string>https://github.com/libaohong52846/MyMapTest4.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyMapTest4.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>72AFA96E6C2D96C70562A87B81B08904E96BD08D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/libaohong52846/MyMapTest4.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>72AFA96E6C2D96C70562A87B81B08904E96BD08D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>72AFA96E6C2D96C70562A87B81B08904E96BD08D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyMapTest4</string>
+		</dict>
+	</array>
+</dict>
+</plist>
